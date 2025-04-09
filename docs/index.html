@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>给Lily的惊喜</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #ffebee;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            color: #d32f2f;
+        }
+
+        .container {
+            text-align: center;
+            max-width: 600px;
+            padding: 20px;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            color: #c2185b;
+            margin-bottom: 20px;
+        }
+
+        button {
+            background-color: #e91e63;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: all 0.3s;
+            margin-top: 20px;
+        }
+
+        button:hover {
+            background-color: #c2185b;
+            transform: scale(1.05);
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        #surpriseContent {
+            margin-top: 30px;
+            animation: fadeIn 1s;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>亲爱的Lily</h1>
+        <p>我有一个特别的惊喜要给你...</p>
+        <button id="surpriseBtn">点击查看惊喜</button>
+        <div id="surpriseContent" class="hidden">
+            <h2>我爱你 ❤️</h2>
+            <p>从遇见你的那一刻起，我的世界就变得不同了。</p>
+            <p>你的笑容是我每天的动力，你的存在让我的生活充满意义。</p>
+            <p>希望这个小小的网站能表达我对你的爱意。</p>
+        </div>
+    </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const surpriseBtn = document.getElementById('surpriseBtn');
+            const surpriseContent = document.getElementById('surpriseContent');
+            
+            surpriseBtn.addEventListener('click', function() {
+                // 隐藏按钮
+                surpriseBtn.style.display = 'none';
+                
+                // 显示隐藏内容
+                surpriseContent.classList.remove('hidden');
+                
+                // 添加心跳动画
+                document.body.style.animation = 'heartbeat 1.5s infinite';
+            });
+        });
+
+        // 心跳动画
+        const style = document.createElement('style');
+        style.textContent = `
+        @keyframes heartbeat {
+            0% { transform: scale(1); }
+            25% { transform: scale(1.1); }
+            50% { transform: scale(1); }
+            75% { transform: scale(1.1); }
+            100% { transform: scale(1); }
+        }
+        `;
+        document.head.appendChild(style);
+    </script>
+</body>
+</html>
